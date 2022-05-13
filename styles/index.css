@@ -144,6 +144,7 @@ ul {
 
 /* About, Education h1 */
 #about .content > h1, #education .content > h1 {
+  margin: 2rem;
   font-family: 'Open Sans', sans-serif;
   font-size: clamp(2rem, 4vw, 7rem);
   font-weight: 800;
@@ -178,24 +179,24 @@ ul {
   justify-content: center;
 }
 
-#education .content .educationItem p:nth-of-type(2) {
-  margin-top: 3rem;
-  margin-left: 4rem;
-  width: clamp(30rem, 50vw, 100rem);
-  font-size: clamp(2rem, 1.5vw, 3rem);
-  font-weight: 400;
-  text-align: left;
-}
-
 #education .content .educationItem {
   display: flex;
   align-items: center;
 }
 
 #education .content .educationItem p:first-of-type {
+  width: 12rem;
   font-size: clamp(2rem, 1.5vw, 3rem);
   font-weight: 400;
   color: var(--orange);
+}
+
+#education .content .educationItem p:nth-of-type(2) {
+  margin: 2rem 3rem;
+  width: clamp(30rem, 50vw, 100rem);
+  font-size: clamp(2rem, 1.5vw, 3rem);
+  font-weight: 400;
+  text-align: left;
 }
 
 #education > img {
@@ -204,6 +205,15 @@ ul {
   right: clamp(1rem, 8vw, 20rem);
   transform: rotate(280deg);
   z-index: -1;
+  width: clamp(10rem, 10vw, 20rem)
+}
+
+#education iframe{
+  position: absolute;
+  bottom: 7rem;
+  right: clamp(1rem, 2.5vw, 20rem);
+  transform: rotate(140deg);
+  z-index: -2;
   width: clamp(10rem, 10vw, 20rem)
 }
 
