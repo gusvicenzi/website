@@ -89,7 +89,6 @@ ul {
 #home {
   display: flex;
   align-items: center;
-  width: 100vw;
 }
 
 #home .content {
@@ -185,8 +184,8 @@ ul {
 }
 
 #education .content .educationItem p:first-of-type {
-  width: 12rem;
-  font-size: clamp(2rem, 1.5vw, 3rem);
+  width: clamp(5rem, 6vw, 15rem);
+  font-size: clamp(1rem, 1.5vw, 3rem);
   font-weight: 400;
   color: var(--orange);
 }
@@ -196,25 +195,32 @@ ul {
   width: clamp(30rem, 50vw, 100rem);
   font-size: clamp(2rem, 1.5vw, 3rem);
   font-weight: 400;
-  text-align: left;
+  text-align: justify;
 }
 
-#education > img {
+#education > .rocket {
   position: absolute;
-  bottom: 35rem;
-  right: clamp(1rem, 8vw, 20rem);
+  bottom: clamp(30rem, 40vh, 50rem);
+  right: clamp(1rem, 20vw, 50rem);
+  z-index: -1;
+  height: 25rem;
+}
+
+#education .rocket > img {
+  position: absolute;
   transform: rotate(280deg);
   z-index: -1;
-  width: clamp(10rem, 10vw, 20rem)
+  width: 15rem;
 }
 
-#education iframe{
+#education .rocket > iframe{
   position: absolute;
-  bottom: 7rem;
-  right: clamp(1rem, 2.5vw, 20rem);
-  transform: rotate(140deg);
+  top: 7rem;
+  left: 4rem;
+  transform: rotate(145deg);
   z-index: -2;
-  width: clamp(10rem, 10vw, 20rem)
+  width: 20rem;
+  height: 20rem;
 }
 
 /* Footer section */
@@ -224,4 +230,49 @@ footer .bar {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .topBar > .profilePicture {
+    display: none;
+  }
+
+  #home .content {
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #home .content > .profilePicture {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  #home .content > h1 {
+    font-size: clamp(2rem, 7vw, 5rem);
+    font-weight: 800;
+    width: 35vw;
+    text-align: center;
+  }
+  
+  #education .content .educationItem p:nth-of-type(2) {
+    margin: 1rem;
+  }
+  
+  #education > .rocket {
+    position: absolute;
+    transform: rotate(0deg);
+    bottom: clamp(5rem, 5vw, 50rem);
+    right: clamp(1rem, 50vw, 50rem);
+  }
+  #education .rocket > img {
+    width: 10rem;
+  }
+  #education .rocket > iframe{
+    width: 15rem;
+    height: 15rem;
+    top: 4rem;
+    left: 2.3rem;
+  }
 }
