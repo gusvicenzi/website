@@ -34,7 +34,7 @@ ul {
   list-style: none;
 }
 
-/* Top and footer bar */
+/*-------------------- Top and footer bar --------------------*/
 .bar {
   display: flex;
   align-items: center;
@@ -63,20 +63,31 @@ ul {
   margin-left: 3rem;
 }
 
-.topBar nav {
+/* .topBar nav {
   position: absolute;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 30rem;
+  width: clamp(38rem, 25vw, 50rem);
+} */
+
+.topBar nav {
+  display: flex;
+  align-items: center;
 }
 
 .topBar ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 30rem;
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: clamp(38rem, 25vw, 50rem);
 }
 
 .topBar nav ul li a {
@@ -84,7 +95,11 @@ ul {
   font-size: 3rem;
 }
 
-/* Home section */
+.topBar nav ul li a:hover {
+  color: var(--orange);
+}
+
+/*-------------------- Home section --------------------*/
 
 #home {
   display: flex;
@@ -118,10 +133,10 @@ ul {
   top: 10rem;
   right: 5rem;
   transform: rotate(25deg);
-  width: clamp(10rem, 10vw, 20rem)
+  width: clamp(10rem, 10vw, 20rem);
 }
 
-/* About section */
+/*-------------------- About section --------------------*/
 
 #about {
   display: flex;
@@ -132,7 +147,8 @@ ul {
 }
 
 /* About, Education content */
-#about .content, #education .content {
+#about .content,
+#education .content {
   margin-top: 7rem;
   height: 100vh;
   width: 50vw;
@@ -141,8 +157,11 @@ ul {
   align-items: center;
 }
 
-/* About, Education, Languages h1 */
-#about .content > h1, #education .content > h1, #languages .content > h1 {
+/* About, Education, Languages, Courses h1 */
+#about .content > h1,
+#education .content > h1,
+#languages .content > h1,
+#courses .content > h1 {
   margin: 2rem;
   font-family: 'Open Sans', sans-serif;
   font-size: clamp(2rem, 7vw, 7rem);
@@ -153,8 +172,8 @@ ul {
 /* About p */
 #about .content > p {
   margin-top: 3rem;
-  width: clamp(30rem, 50vw, 100rem);
-  font-size: clamp(2rem, 1.5vw, 3rem);
+  width: clamp(30rem, 45vw, 100rem);
+  font-size: clamp(2rem, 1.2vw, 3rem);
   font-weight: 400;
   text-align: justify;
 }
@@ -165,10 +184,10 @@ ul {
   left: clamp(1rem, 4vw, 10rem);
   transform: rotate(250deg);
   z-index: -1;
-  width: clamp(10rem, 10vw, 20rem)
+  width: clamp(10rem, 10vw, 20rem);
 }
 
-/* Education section */
+/*-------------------- Education section --------------------*/
 
 #education {
   display: flex;
@@ -184,17 +203,18 @@ ul {
 }
 
 #education .content .educationItem p:first-of-type {
-  width: clamp(10rem, 10vw, 20rem);
-  font-size: clamp(1.3rem, 1.5vw, 3rem);
+  width: clamp(5.5rem, 4vw, 20rem);
+  flex-basis: 18%;
+  font-size: clamp(1.3rem, 1.2vw, 3rem);
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   color: var(--orange);
 }
 
 #education .content .educationItem p:nth-of-type(2) {
   margin: 2rem 3rem;
-  width: clamp(30rem, 50vw, 100rem);
-  font-size: clamp(2rem, 1.5vw, 3rem);
+  width: clamp(30rem, 45vw, 100rem);
+  font-size: clamp(2rem, 1.2vw, 3rem);
   font-weight: 400;
   text-align: justify;
 }
@@ -202,7 +222,7 @@ ul {
 #education > .rocket {
   position: absolute;
   bottom: clamp(30rem, 40vh, 50rem);
-  right: clamp(1rem, 15vw, 50rem);
+  right: clamp(10rem, 23vw, 50rem);
   z-index: -1;
   height: 25rem;
 }
@@ -214,7 +234,7 @@ ul {
   width: 15rem;
 }
 
-#education .rocket > iframe{
+#education .rocket > iframe {
   position: absolute;
   top: 7rem;
   left: 4rem;
@@ -224,7 +244,7 @@ ul {
   height: 20rem;
 }
 
-/* Languages section */
+/*-------------------- Languages section --------------------*/
 
 #languages {
   position: relative;
@@ -268,19 +288,19 @@ ul {
   margin-left: 3rem;
 }
 
-#languages .content .languagesItem .languagesText{
-  width: 50vw;
-  font-size: clamp(2rem, 1.5vw, 3rem);
+#languages .content .languagesItem .languagesText {
+  width: 45vw;
+  font-size: clamp(2rem, 1.2vw, 3rem);
   font-weight: 400;
 }
 
 /*#languages .content .languagesItem .languagesText.left */
-#languages .content div:nth-child(even){
+#languages .content div:nth-child(even) {
   text-align: left;
 }
 
 /*#languages .content .languagesItem .languagesText.right */
-#languages .content div:nth-child(odd){
+#languages .content div:nth-child(odd) {
   text-align: right;
 }
 
@@ -299,14 +319,117 @@ ul {
   margin-top: 2rem;
 }
 
+/*-------------------- Courses section --------------------*/
 
-/* Footer section */
+#courses .content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 5rem;
+}
+
+/* Fieldset */
+#courses .content fieldset {
+  border-style: solid;
+  border-radius: 15px;
+  border-color: var(--lightOrange);
+
+  padding: 2rem;
+  margin: 3rem 0;
+  width: 50vw;
+}
+
+/* Fieldset legend */
+
+#courses .content fieldset legend {
+  color: var(--orange);
+}
+
+/* Course title */
+#courses .content fieldset .courseText > h3 {
+  font-size: clamp(2rem, 1.2vw, 3rem);
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+}
+
+/* Course year */
+#courses .content fieldset .courseText .courseYear {
+  font-size: clamp(1.8rem, 1vw, 3rem);
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+/* Text */
+#courses .content fieldset .courseText > p {
+  font-size: clamp(2rem, 1.2vw, 3rem);
+  font-weight: 400;
+  margin: 1rem;
+  text-align: justify;
+}
+
+/* Workload */
+#courses .content fieldset > p {
+  color: var(--gray);
+  text-align: end;
+}
+
+/*-------------------- Footer section --------------------*/
 
 footer .bar {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  #education > .rocket {
+    position: absolute;
+    transform: rotate(0deg);
+    bottom: clamp(5rem, 10vh, 50rem);
+    right: clamp(1rem, 50vw, 50rem);
+  }
+
+  /* Years */
+  #education .content .educationItem p:first-of-type {
+    width: clamp(8rem, 4vw, 20rem);
+    text-align: center;
+  }
+
+  /* Text */
+  #education .content .educationItem p:nth-of-type(2) {
+    width: 80vw;
+    margin: 2rem 1rem;
+  }
+
+  #education .rocket > img {
+    width: 10rem;
+  }
+  #education .rocket > iframe {
+    width: 15rem;
+    height: 15rem;
+    top: 4rem;
+    left: 2.3rem;
+  }
+
+  /*-------------------- Languages section --------------------*/
+
+    #languages > img {
+      width: 12rem;
+      top: 11rem;
+      right: 2rem;
+      z-index: -1;
+    }
+
+  /*-------------------- Courses section --------------------*/
+
+  /* Fieldset */
+  #courses .content fieldset {
+    width: 80vw;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -316,7 +439,7 @@ footer .bar {
 
   #home .content {
     display: flex;
-    
+
     flex-direction: column;
     justify-content: center;
   }
@@ -325,21 +448,24 @@ footer .bar {
     margin-right: 0;
     margin-bottom: 2rem;
   }
-  
+
   #home .content > h1 {
     width: 35vw;
     text-align: center;
   }
-  
+
   #education .content .educationItem {
     flex-direction: column;
   }
 
+
+
+  /* Text */
   #education .content .educationItem p:nth-of-type(2) {
     margin-top: 1rem;
     margin-bottom: 3rem;
   }
-  
+
   #education > .rocket {
     position: absolute;
     transform: rotate(0deg);
@@ -349,7 +475,7 @@ footer .bar {
   #education .rocket > img {
     width: 10rem;
   }
-  #education .rocket > iframe{
+  #education .rocket > iframe {
     width: 15rem;
     height: 15rem;
     top: 4rem;
@@ -358,13 +484,6 @@ footer .bar {
 
   /* Languages */
 
-  #languages > img {
-    width: 15rem;
-    top: 11rem;
-    right: 2rem;
-    z-index: -1;
-  }
-
   #languages .content .languagesItem {
     display: flex;
     flex-direction: column;
@@ -372,7 +491,7 @@ footer .bar {
     margin-bottom: 5rem;
     height: auto;
   }
-  
+
   /* Languages logos */
   #languages .content .languagesItem > img {
     width: 10rem;
@@ -382,7 +501,7 @@ footer .bar {
     order: -1;
   }
 
-  #languages .content .languagesItem .languagesText{
+  #languages .content .languagesItem .languagesText {
     width: 80vw;
     text-align: center;
   }
